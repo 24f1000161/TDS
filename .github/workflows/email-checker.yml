@@ -14,7 +14,8 @@ jobs:
         shell: bash
       - name:  prime-cache-2dd58fd
         shell: bash
-        run: echo "prime-cache-2dd58fd: $([ \"${{ steps.prime-cache-2dd58fd.outputs.cache-hit }}\" = \"true\" ] && echo 'cache hit' || echo 'cache miss')"
+        run: |
+            echo prime-cache-2dd58fd: ${{ steps.prime-cache-2dd58fd.outputs.cache-hit == 'true' && 'cache hit' || 'cache miss' }}'cache miss' }}"
       - name: Search for email addresses
         shell: bash
         run: |
