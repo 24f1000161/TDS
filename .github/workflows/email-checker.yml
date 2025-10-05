@@ -12,10 +12,12 @@ jobs:
       - name: 24f1000161@ds.study.iitm.ac.in
         run: echo "Hello, world!"
         shell: bash
-      - name:  prime-cache-2dd58fd
-        shell: bash
+      - name: Echo prime-cache-2dd58fd hit/miss
+        env:
+            CACHE_HIT: ${{ steps.prime-cache-2dd58fd.outputs.cache-hit }}
         run: |
-            echo prime-cache-2dd58fd: ${{ steps.prime-cache-2dd58fd.outputs.cache-hit == 'true' && 'cache hit' || 'cache miss' }}'cache miss' }}"
+            [ "$CACHE_HIT" = "true" ] && echo "prime-cache-2dd58fd: cache hit" || echo "prime-cache-2dd58fd: cache miss"
+        shell: bash 
       - name: Search for email addresses
         shell: bash
         run: |
