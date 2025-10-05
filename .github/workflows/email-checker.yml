@@ -1,0 +1,28 @@
+name: email-checker
+on:
+  push:
+    branches: [ main ]
+jobs:
+  find-emails:
+    name: Find email addresses in repo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: 24f1000161@ds.study.iitm.ac.in
+        run: echo "Hello, world!"
+      - name: Search for email addresses
+        shell: bash
+        run: |
+          set -euo pipefail
+          # adjust excluded dirs as needed
+          matches=$(grep -RInE --exclude-dir='.git' --exclude-dir='node_modules' --exclude-dir='dist' --exclude-dir='build' --exclude-dir='vendor' '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b' . || true)
+          if [ -n "$matches" ]; then
+            echo "Email addresses found:"
+            echo "$matches"
+            # annotate the failure in the workflow
+            echo "::error file=repo::Email addresses detected in repository"
+            exit 1
+          else
+            echo "No email addresses found"
+          fi
