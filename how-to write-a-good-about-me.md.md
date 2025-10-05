@@ -2,7 +2,6 @@
 layout: page
 title: How to write a good "About Me"
 permalink: /about/
-remote_theme: pages-themes/hacker@v0.2.0
 ---
 # How to write a good "About Me"
 
@@ -57,7 +56,7 @@ Done. Place the markdown file in your repo (root or _pages), commit, and GitHub 
 
 
 ### Contact me
-Email : `24f1000161 [at] ds [dot] study [dot] iitm [dot] ac [dot] in` · GitHub: [24f1000161](https://github.com/yourname) 
+Email : <!--email_off-->24f1000161@ds.study.iitm.ac.in<!--/email_off--> · GitHub: [24f1000161](https://github.com/yourname) 
 
 © 2025 Divyam Joshi. Built with [GitHub Pages](https://pages.github.com/).
 // ...existing code...
