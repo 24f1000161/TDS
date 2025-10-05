@@ -4,12 +4,13 @@ title: How to write a good "About Me"
 permalink: /about/
 remote_theme: pages-themes/hacker@v0
 ---
-title: How to write a good "About Me"
-Purpose
+# How to write a good "About Me"
+
+# Purpose
 -------
 A good "About Me" page quickly tells visitors who you are, what you do, and why they should care. On GitHub Pages it's also a place to point to projects, contact info, and ways to collaborate.
 
-Structure (recommended)
+# Structure (recommended)
 -----------------------
 1. Short headline — one clear sentence about what you do.
 2. Elevator pitch — 2–4 sentences explaining your focus, skills, and what you build.
@@ -18,21 +19,21 @@ Structure (recommended)
 5. Contact / call to action — preferred contact method and links (email, GitHub, LinkedIn).
 6. Optional personal line — one sentence about hobbies or values to humanize the page.
 
-Tone & length
+# Tone & length
 -------------
 - Keep voice consistent with your projects (professional, friendly, or technical).
 - Aim for scannable text: short paragraphs and bullet lists.
 - Desktop visitors scan quickly — keep the core message above the fold (first screen).
 - Include a longer section or separate page for a full bio if needed.
 
-Accessibility & formatting tips
+# Accessibility & formatting tips
 -------------------------------
 - Use headings (h2/h3) and lists for structure.
 - Add alt text if you include an image.
 - Provide links with clear labels (e.g., "See project: project-name").
 - Include machine-readable contact (email link or GitHub handle).
 
-Examples
+# Examples
 --------
 Short example (one-liner + CTA):
 
