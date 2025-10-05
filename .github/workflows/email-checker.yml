@@ -1,7 +1,7 @@
 name: email-checker
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
 jobs:
   find-emails:
     name: Find email addresses in repo
