@@ -12,12 +12,25 @@ jobs:
       - name: 24f1000161@ds.study.iitm.ac.in
         run: echo "Hello, world!"
         shell: bash
-      - name: Echo prime-cache-2dd58fd hit/miss
+      - name: Restore cache
+        id: prime-cache-2dd58fd-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/prime
+          key: cache-2dd58fd-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            cache-2dd58fd-${{ runner.os }}-
+      - name: prime-cache-2dd58fd
         env:
-            CACHE_HIT: ${{ steps.prime-cache-2dd58fd.outputs.cache-hit }}
+          CACHE_HIT: ${{ steps.prime-cache-2dd58fd-cache.outputs.cache-hit }}
         run: |
-            [ "$CACHE_HIT" = "true" ] && echo "prime-cache-2dd58fd: cache hit" || echo "prime-cache-2dd58fd: cache miss"
-        shell: bash 
+          if [ "$CACHE_HIT" = "true" ]; then
+            echo "prime-cache-2dd58fd: cache hit"
+          else
+            echo "prime-cache-2dd58fd: cache miss"
+          fi
+        shell: bash
       - name: Search for email addresses
         shell: bash
         run: |
