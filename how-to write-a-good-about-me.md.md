@@ -2,9 +2,9 @@
 layout: page
 title: How to write a good "About Me"
 permalink: /about/
-theme: jekyll-theme-slate
+remote_theme: pages-themes/hacker@v0
 ---
-
+title: How to write a good "About Me"
 Purpose
 -------
 A good "About Me" page quickly tells visitors who you are, what you do, and why they should care. On GitHub Pages it's also a place to point to projects, contact info, and ways to collaborate.
